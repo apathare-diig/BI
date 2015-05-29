@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
+<!-- 2015-05-28T14:16:18 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MB_Scheduled_Invoice" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4259c82e-54f0-42a4-af4d-33a43a353fbb">
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MB_WORKFLOW_QA"/>
+	<parameter name="prmCustomerId" class="java.lang.String"/>
+	<parameter name="prmEndDate" class="java.util.Date"/>
+	<parameter name="prmStartDate" class="java.util.Date"/>
+	<parameter name="prmShowEmpCode" class="java.lang.Boolean">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[false]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT 1 AS DUMMY]]>
+	</queryString>
+	<field name="DUMMY" class="java.lang.Long"/>
+	<title>
+		<band height="89">
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="30" uuid="f67711fc-6d17-4493-b767-7ce03beaa398"/>
+				<subreportParameter name="prmCustomerId">
+					<subreportParameterExpression><![CDATA[$P{prmCustomerId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="prmStartDate">
+					<subreportParameterExpression><![CDATA[$P{prmStartDate}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="prmEndDate">
+					<subreportParameterExpression><![CDATA[$P{prmEndDate}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reports/MB_Invoice_Master.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="38" width="200" height="46" uuid="9f709afa-655d-475a-a571-76358a3c14df"/>
+				<subreportParameter name="prmCustomerId">
+					<subreportParameterExpression><![CDATA[$P{prmCustomerId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="prmStartDate">
+					<subreportParameterExpression><![CDATA[$P{prmStartDate}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="prmEndDate">
+					<subreportParameterExpression><![CDATA[$P{prmEndDate}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="prmShowEmpCode">
+					<subreportParameterExpression><![CDATA[$P{prmShowEmpCode}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Reports/MB_Invoice_Statement.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+</jasperReport>

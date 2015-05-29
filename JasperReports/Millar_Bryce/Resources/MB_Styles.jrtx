@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperTemplate PUBLIC "-//JasperReports//DTD Template//EN" "http://jasperreports.sourceforge.net/dtds/jaspertemplate.dtd">
+
+<jasperTemplate>
+	<style name="SimpleStyle"/>
+	<style name="Text_N" isDefault="true" mode="Transparent" fontName="Arial" fontSize="9"/>
+	<style name="Text_N_LA" hAlign="Left" markup="html" fontSize="9"/>
+	<style name="Text_N_RA" hAlign="Right" markup="html" fontSize="9"/>
+	<style name="Text_B_CA" hAlign="Center" fontName="Arial" fontSize="9" isBold="true"/>
+	<style name="Text_B_LA" hAlign="Left" markup="html" fontName="Arial" fontSize="9" isBold="true"/>
+	<style name="Text_B_RA" hAlign="Right" markup="html" fontSize="9" isBold="true"/>
+	<style name="Number_N_RA" hAlign="Right" markup="html" fontName="Arial" fontSize="9"/>
+	<style name="Number_N_CA" hAlign="Center" markup="html" fontName="Arial" fontSize="9"/>
+	<style name="Number_B_RA" hAlign="Right" markup="html" fontName="Arial" fontSize="9" isBold="true"/>
+	<style name="Number_B_CA" hAlign="Center" markup="html" fontName="Arial" fontSize="9" isBold="true"/>
+	<style name="Text_N_11" isDefault="true" mode="Transparent" fontName="Arial" fontSize="11"/>
+	<style name="Text_N_LA_11" hAlign="Left" markup="html" fontName="Arial" fontSize="11"/>
+	<style name="Text_N_RA_11" hAlign="Right" markup="html" fontName="Arial" fontSize="11"/>
+	<style name="Text_B_CA_11" hAlign="Center" fontName="Arial" fontSize="11" isBold="true"/>
+	<style name="Text_B_LA_11" hAlign="Left" markup="html" fontName="Arial" fontSize="11" isBold="true"/>
+	<style name="Text_B_RA_11" hAlign="Right" markup="html" fontSize="11" isBold="true"/>
+	<style name="Number_N_RA_11" hAlign="Right" markup="html" fontName="Arial" fontSize="11"/>
+	<style name="Number_N_CA_11" hAlign="Center" markup="html" fontName="Arial" fontSize="11"/>
+	<style name="Number_B_RA_11" hAlign="Right" markup="html" fontName="Arial" fontSize="11" isBold="true"/>
+	<style name="Number_B_CA_11" hAlign="Center" markup="html" fontName="Arial" fontSize="11" isBold="true"/>
+	<style name="Text_B_CA_Grey" forecolor="#A1A1A1" hAlign="Center" fontName="Arial" fontSize="9" isBold="true"/>
+	<style name="Text_B_LA_Grey" forecolor="#A1A1A1" hAlign="Left" markup="html" fontName="Arial" fontSize="9" isBold="true"/>
+	<style name="Text_B_RA_Grey" forecolor="#A1A1A1" hAlign="Right" markup="html" fontSize="9" isBold="true"/>
+	<style name="Text_N_CA_Grey_7" forecolor="#D6D6D6" hAlign="Center" fontName="Arial" fontSize="7"/>
+	<style name="Text_N_LA_Grey_7" forecolor="#D6D6D6" hAlign="Left" markup="html" fontName="Arial" fontSize="7"/>
+	<style name="Text_N_RA_Grey_7" forecolor="#D6D6D6" hAlign="Right" markup="html" fontSize="7"/>
+</jasperTemplate>

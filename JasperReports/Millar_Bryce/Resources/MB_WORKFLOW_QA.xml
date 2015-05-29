@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl"><name>MB_WORKFLOW_QA</name><driver>com.mysql.jdbc.Driver</driver><username>root</username><password>a7dfa614-4052-4ad1-8a8e-ebccd207fc29</password><savePassword>true</savePassword><url>jdbc:mysql://192.168.226.118:3306/mb_workflow_platform</url><database></database><serverAddress></serverAddress><classpath>C:\mysql-connector-java-5.1.31\mysql-connector-java-5.1.31\mysql-connector-java-5.1.31-bin.jar</classpath></jdbcDataAdapter>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl"><name>Timesheet_MySQL</name><driver>com.mysql.jdbc.Driver</driver><username>root</username><password>8cfc2077-a90d-42de-b275-56f2a637338c</password><savePassword>true</savePassword><url>jdbc:mysql://192.168.229.120:3306/itr_db</url><database></database><serverAddress></serverAddress><classpath>C:\mysql-connector-java-5.1.31\mysql-connector-java-5.1.31\mysql-connector-java-5.1.31-bin.jar</classpath></jdbcDataAdapter>

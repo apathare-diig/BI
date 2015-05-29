@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
+<!-- 2015-04-16T11:50:07 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="m_b_invoice" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5cc3f63e-1038-4c87-9efe-f0d189a600a4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mb_37"/>
+	<parameter name="Invoice" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select
+                acc.acccountId as 'Account_Number',
+                ord.orderid as 'job_reference',
+                inv.invoiceid as 'invoice_number',
+                inv.taxDate as 'invoice_credit_date',
+                ord.dateOrdered as 'instruction_date',
+                pd.address as 'Address',
+                ord.customerRef as 'customer_reference',
+                ord.clientName as 'Username',
+                pp.productname as 'job_type_code',
+                IFNULL(invl.amount1,0.00)+IFNULL(invl.amount2,0.00)+IFNULL(invl.amount3,0.00) as 'goods_value',
+                IFNULL(round(invl.vatAmount/100,2),0.00) as 'vat_value',
+                con.contactId as 'ContactId',
+                con.fullname as 'ContactName',
+                cus.name as 'CustomerName',
+                cadd.data as 'CustomerAddress',
+                cdx.data as 'CustomerDx'
+FROM Accounting.invoice inv
+                LEFT JOIN order.order  ord ON ord.orderid = inv.orderid
+                LEFT JOIN accounting.invoice_line invl on invl.invoiceRowid= inv.id
+                LEFT join order.order_products o_p on o_p.purchaseOrderNo = ord.id
+                LEFT join order.orderproduct op on op.id = o_p.productsId
+                LEFT JOIN order.orderproduct_properties opp on opp.miscRegisterSearch=op.id and opp.id=0
+                LEFT JOIN order.propertydetails pd on pd.id=opp.propertiesid
+                LEFT JOIN Product.product pp ON pp.productid = op.productid
+                LEFT JOIN customer.contact con ON ord.contactId=con.contactId
+                LEFT JOIN customer.office off ON con.office=off.id
+                LEFT JOIN customer.customer cus ON off.customer=cus.id
+                LEFT JOIN accounting.account acc ON acc.acccountId = inv.acccountid and cus.customerId=acc.customerId
+                LEFT JOIN customer.customer_correspondencetypes as cadd ON cus.id=cadd.customerId and cadd.correspondenceTypeId=1
+                LEFT JOIN customer.customer_correspondencetypes as cdx ON cus.id=cadd.customerId and cadd.correspondenceTypeId=4
+WHERE inv.invoiceid = $P{Invoice}]]>
+	</queryString>
+	<field name="Account_Number" class="java.lang.String"/>
+	<field name="job_reference" class="java.lang.String"/>
+	<field name="invoice_number" class="java.lang.String"/>
+	<field name="invoice_credit_date" class="java.sql.Timestamp"/>
+	<field name="instruction_date" class="java.sql.Timestamp"/>
+	<field name="Address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="customer_reference" class="java.lang.String"/>
+	<field name="Username" class="java.lang.String"/>
+	<field name="job_type_code" class="java.lang.String"/>
+	<field name="goods_value" class="java.lang.Double"/>
+	<field name="vat_value" class="java.lang.Double"/>
+	<field name="ContactId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ContactName" class="java.lang.String"/>
+	<field name="CustomerName" class="java.lang.String"/>
+	<field name="CustomerAddress" class="java.lang.String"/>
+	<field name="CustomerDx" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="219" y="0" width="61" height="22" forecolor="#000000" uuid="1a06518d-c633-4f0b-9fdd-502f414fd888"/>
+				<textElement textAlignment="Justified">
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="229" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="70" height="99" forecolor="#0000FF" backcolor="#3333FF" uuid="d74d69c0-f5af-4ab6-ac9e-713530e701d9"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="20" width="70" height="22" forecolor="#FFFFFF" uuid="22d1f107-6f1f-4cbd-a44e-97791e6414ff"/>
+				<textElement textAlignment="Justified">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Millar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="56" width="70" height="22" forecolor="#FFFFFF" backcolor="#0000FF" uuid="cae31115-897c-46c7-8580-cf87c9dc0f06"/>
+				<textElement textAlignment="Justified">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Bryce]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="0" width="90" height="117" uuid="73899c9e-8e78-4711-bf16-af31762b1928"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Millar & Bryce Limited
+Bonnington Bond
+2 Anderson Place
+Leith
+Edinburgh EH6 5NP
+
+
+DX 550301
+EDINBURGH 24
+Tel: 0131-556 1313
+Fax: 0131-557 5960
+VAT no. 592 9514 03]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="230" y="22" width="119" height="20" backcolor="#F0F8FF" uuid="37d9189e-5562-40b5-91dd-aa44861014f4"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Invoice Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="230" y="61" width="119" height="20" backcolor="#F0F8FF" uuid="bb249419-7692-4894-90d6-9e24317bb8be"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Reference number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="230" y="2" width="119" height="21" backcolor="#F0F8FF" uuid="bd151b82-d357-45c4-bbd2-41d26c31fc5e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Account Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="230" y="80" width="119" height="20" isRemoveLineWhenBlank="true" backcolor="#F0F8FF" uuid="86ada76c-30b6-480c-84b7-7a3955eb4948"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Instructions received]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="230" y="42" width="119" height="20" backcolor="#F0F8FF" uuid="533967af-ee66-4552-8e80-2ccb15146030"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Date/ Tax Point]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="230" y="98" width="119" height="20" isRemoveLineWhenBlank="true" backcolor="#F0F8FF" uuid="35e6560c-35de-4692-9c13-11dda508c7ae"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Customer reference]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="205" width="126" height="20" isRemoveLineWhenBlank="true" backcolor="#F0F8FF" uuid="6e893085-c6ce-4f92-b039-ebda13b11682"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Client]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="349" y="2" width="125" height="20" uuid="357c76fc-7ce2-4efd-a116-7178366dbf8f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Account_Number}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="349" y="38" width="125" height="20" uuid="6890e1e2-3d75-4f20-ab50-2ec47da3c866"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_credit_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="349" y="20" width="125" height="18" uuid="5478239b-cbb4-4f8f-ac24-0ed1c21e684f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_number}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="349" y="59" width="125" height="21" uuid="7084a408-4a08-4c6d-8984-d8dc3072b8ad"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_reference}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="349" y="80" width="125" height="18" uuid="3ab0f9be-1dba-42fb-ad2a-39f8549df903"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{instruction_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="349" y="98" width="206" height="20" uuid="043fa60b-804e-4b21-b769-b6f21c813e94"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_reference}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="126" y="205" width="125" height="20" uuid="7ab175fd-a420-4300-a7b0-48a7f1c7aeef"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Username}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="131" width="125" height="20" uuid="f8e3af8f-abb9-46b3-a1a1-38a5137b18f3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CustomerName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="171" width="125" height="20" uuid="4dc2b7c2-ecd9-4f0b-8fc7-5947eea9c1aa"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CustomerDx}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="151" width="125" height="20" uuid="81a28544-8d72-4620-837d-48d3957de907"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CustomerAddress}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="370" height="20" uuid="79211d51-36fe-44e1-9058-72276816ee35"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Address}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="2" y="35" width="385" height="20" uuid="f54ad989-1a58-4457-9b0c-41858218b31f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_type_code}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="392" y="35" width="82" height="20" uuid="6eeb0d71-2342-4fde-848e-24a829d06630"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{goods_value}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="477" y="35" width="64" height="20" uuid="37bb2486-5e59-4e1b-a721-1671fcf6a1d7"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vat_value}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="33" width="555" height="1" uuid="81b7c865-93ff-400d-a511-c85f7fc924ac"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="350" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="230" y="190" width="119" height="20" backcolor="#F0F8FF" uuid="85a7a27b-e987-4217-99ae-4e2d207db9a9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Date/ Tax Point]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="142" width="70" height="22" forecolor="#FFFFFF" uuid="e32c2ea3-4a32-40ff-a815-5d4d99dc08df"/>
+				<textElement textAlignment="Justified">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Millar]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="349" y="207" width="125" height="21" uuid="9ecf8c18-016a-46a6-aadc-0d37fb3eed83"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_reference}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="230" y="209" width="119" height="20" backcolor="#F0F8FF" uuid="0eea2e95-02e3-4dce-a69c-c96e7d11ebed"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Reference number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="178" width="70" height="22" forecolor="#FFFFFF" backcolor="#0000FF" uuid="fb1f823e-7df7-4628-9333-79e0c6949c1b"/>
+				<textElement textAlignment="Justified">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Bryce]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="122" width="70" height="99" forecolor="#0000FF" backcolor="#3333FF" uuid="8fed617d-4492-4769-b539-2d7349a2b66c"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="230" y="246" width="119" height="20" isRemoveLineWhenBlank="true" backcolor="#F0F8FF" uuid="be81ff3b-9f7e-4f75-8f1f-e56e6634e962"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Customer reference]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="230" y="228" width="119" height="20" isRemoveLineWhenBlank="true" backcolor="#F0F8FF" uuid="c0cb1c7d-329a-474c-bf44-2485087f0528"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Instructions received]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="230" y="170" width="119" height="20" backcolor="#F0F8FF" uuid="fd1d449a-68e4-4ee2-95f2-205e8ea3c01f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Invoice Number]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="349" y="228" width="125" height="18" uuid="79493a0d-7e31-4ab5-ac04-e8f278298336"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{instruction_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="349" y="150" width="125" height="20" uuid="107ccf3c-c342-48c1-9824-60a6c75b5a11"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Account_Number}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="349" y="168" width="125" height="18" uuid="ea900614-e6fb-4481-9079-d05fde5f626d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_number}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="85" y="122" width="90" height="117" uuid="0b5742e1-c1e6-478a-bae4-5eeae021468a"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Millar & Bryce Limited
+Bonnington Bond
+2 Anderson Place
+Leith
+Edinburgh EH6 5NP
+
+
+DX 550301
+EDINBURGH 24
+Tel: 0131-556 1313
+Fax: 0131-557 5960
+VAT no. 592 9514 03]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="347" y="246" width="206" height="20" uuid="38c003e9-863f-489b-8b71-9dde15b7bc15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_reference}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="349" y="186" width="125" height="20" uuid="9e05b967-0329-4f4c-88e7-8a1ee59d94fb"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_credit_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="230" y="150" width="119" height="21" backcolor="#F0F8FF" uuid="d90eaace-e4d8-4151-9d5d-18a172702ae3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Account Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="142" width="70" height="22" forecolor="#FFFFFF" uuid="a406f5f4-5aeb-4635-9880-738aeed1c0a0"/>
+				<textElement textAlignment="Justified">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Millar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="178" width="70" height="22" forecolor="#FFFFFF" backcolor="#0000FF" uuid="c91ed209-1a75-4797-bb1b-1db1615021ef"/>
+				<textElement textAlignment="Justified">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Bryce]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="121" width="152" height="22" forecolor="#000000" uuid="80324a7e-6c53-4408-a752-81d390b376a8"/>
+				<textElement textAlignment="Justified">
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[REMITTANCE ADVICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="283" width="475" height="15" forecolor="#000000" uuid="788c1d72-055c-479d-86c0-90982825519b"/>
+				<textElement textAlignment="Justified">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PLEASE RETURN THIS PORTION WITH YOUR REMITTANCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="297" width="475" height="15" forecolor="#000000" uuid="ab5ff980-f6bd-4bb6-aad7-e572ab2fa1be"/>
+				<textElement textAlignment="Justified">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CHEQUES SHOULD BE CROSSED AND MADE PAYABLE TO "MILLAR & BRYCE LTD"]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="392" y="326" width="82" height="20" uuid="0dfaa143-d090-48bf-be56-8997107803ab"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{goods_value}+$F{vat_value}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="3" y="116" width="550" height="1" uuid="25cc5bb1-48cb-4b5e-b751-7a49b62cffb3"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="348" y="326" width="44" height="21" backcolor="#F0F8FF" uuid="f02bce17-10b9-497b-a218-3e9fba4de377"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="66" y="62" width="66" height="20" uuid="7c6d63fa-af86-4438-a90c-0d6246fe5cf3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vat_value}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="392" y="42" width="82" height="20" uuid="7297b93d-2afe-46a5-acbd-183d908ece27"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{goods_value}+$F{vat_value}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="392" y="22" width="82" height="20" uuid="6970b711-6e35-4193-8714-9e4fb7029e1a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vat_value}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="66" y="22" width="66" height="20" uuid="66965008-057c-457f-9502-296a257a3bbe"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[20.00 %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="2" width="108" height="20" forecolor="#000000" backcolor="#009999" uuid="59ab9ad4-3068-46ec-bd1c-0f1a207c676d"/>
+				<textElement textAlignment="Justified">
+					<font size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[VAT ANALYSIS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="66" y="42" width="66" height="20" uuid="1bd9c826-262c-4841-a16d-060710c322a3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{goods_value}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="392" y="2" width="82" height="20" uuid="a009adfa-f372-479b-92b3-587957958165"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{goods_value}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="348" y="43" width="44" height="19" backcolor="#F0F8FF" uuid="25bd147c-4678-4f58-aeb6-4c06f69d9c6b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="348" y="2" width="44" height="21" backcolor="#F0F8FF" uuid="6b07c557-e336-479c-831d-6b58d47f4be5"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[FEES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="348" y="23" width="44" height="20" backcolor="#F0F8FF" uuid="fa7f0f39-766a-47da-a6eb-31011438df65"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[VAT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="b91eefb8-8fa1-4b52-bc97-129e9089c63b"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="22" width="66" height="20" uuid="01f92b0f-e774-484e-9615-0a61d00a13b6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[VAT @]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="42" width="66" height="20" uuid="ce754f6f-da89-4a5c-a032-01ff26009630"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Fees Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="62" width="66" height="20" uuid="5de50f0e-565c-4a68-9fb5-73c5e8813a2e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[VAT Amount]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

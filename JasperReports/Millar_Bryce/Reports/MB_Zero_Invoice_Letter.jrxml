@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
+<!-- 2015-05-22T16:15:26 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MB_Zero_Invoice_Letter" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" resourceBundle="Resources/MB_Invoice" uuid="f333fce7-6192-4223-b15f-1c15480c1456">
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<template><![CDATA["Resources/MB_Styles.jrtx"]]></template>
+	<parameter name="OrderItem" class="com.diig.attis.order.model.OrderItem"/>
+	<parameter name="Customer" class="com.diig.attis.customer.model.Customer"/>
+	<parameter name="Order" class="com.diig.attis.order.model.Order"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="292" splitType="Stretch">
+			<textField>
+				<reportElement key="" style="Text_B_LA_11" x="212" y="0" width="170" height="30" uuid="f0d99e07-12fc-457d-89bb-7a2ff8a631ea">
+					<property name="local_mesure_unitwidth" value="mm"/>
+					<property name="local_mesure_unitx" value="mm"/>
+				</reportElement>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$P{OrderItem}.getProductId()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="484" y="0" width="85" height="116" uuid="42466ff2-6e99-435a-9e47-c46fa6dd2d3d"/>
+				<imageExpression><![CDATA["C:/Users/apathare/JaspersoftWorkspace/Millar_and_Bryce/Resources/Millar_Bryce_Logo.jpg"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement x="355" y="170" width="200" height="110" uuid="c55e6667-6b7e-498c-9a59-4b7de8d7c6c3"/>
+				<textField>
+					<reportElement style="Text_N_LA_11" x="0" y="0" width="99" height="19" isRemoveLineWhenBlank="true" uuid="0dd5d81f-50fb-40c1-8be1-14c070d58d00">
+						<property name="local_mesure_unitheight" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitx" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.x" value="mm"/>
+						<property name="local_mesure_unitwidth" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					</reportElement>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{Date}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Text_N_LA_11" x="0" y="38" width="99" height="19" isRemoveLineWhenBlank="true" uuid="a89f90c6-ed1b-4882-a504-20547865323a">
+						<property name="local_mesure_unitheight" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+						<property name="local_mesure_unity" value="mm"/>
+						<property name="local_mesure_unitx" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.x" value="mm"/>
+						<property name="local_mesure_unitwidth" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					</reportElement>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{YourRef}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Text_N_LA_11" x="0" y="19" width="99" height="19" isRemoveLineWhenBlank="true" uuid="df4cdb44-80bf-4e0c-b4f4-c1d5468e6685">
+						<property name="local_mesure_unitheight" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+						<property name="local_mesure_unity" value="mm"/>
+						<property name="local_mesure_unitx" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.x" value="mm"/>
+						<property name="local_mesure_unitwidth" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					</reportElement>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$R{SearchRefNo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Text_N_LA_11" x="99" y="0" width="99" height="19" isRemoveLineWhenBlank="true" uuid="343ecd37-a7e6-4d8d-a3f7-52e5b4bf5a88">
+						<property name="local_mesure_unitheight" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+						<property name="local_mesure_unity" value="mm"/>
+						<property name="local_mesure_unitx" value="mm"/>
+						<property name="local_mesure_unitwidth" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					</reportElement>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMM yyyy").format(new java.util.Date())]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Text_N_LA_11" x="100" y="19" width="99" height="19" isRemoveLineWhenBlank="true" uuid="b9699f1c-4000-4159-ab58-c3d368254a75">
+						<property name="local_mesure_unitheight" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+						<property name="local_mesure_unity" value="mm"/>
+						<property name="local_mesure_unitx" value="mm"/>
+						<property name="local_mesure_unitwidth" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.y" value="mm"/>
+					</reportElement>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{Order}.getOrderReference()+"/"+$P{Order}.getAttribute("SearcherId")]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Text_N_LA_11" x="100" y="38" width="99" height="19" isRemoveLineWhenBlank="true" uuid="388ede42-0ad4-4427-8cc5-3b522595d0c9">
+						<property name="local_mesure_unitheight" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+						<property name="local_mesure_unity" value="mm"/>
+						<property name="local_mesure_unitx" value="mm"/>
+						<property name="local_mesure_unitwidth" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.y" value="mm"/>
+					</reportElement>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{Order}.getAttribute("fileReference")]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="1" y="172" width="279" height="108" uuid="d6d921b1-4524-4398-a7d7-8903e74fdcbc"/>
+				<textField>
+					<reportElement style="Text_N_LA_11" x="0" y="0" width="99" height="19" isRemoveLineWhenBlank="true" uuid="720f3df0-2362-4b04-9387-520ceace8e1e">
+						<property name="local_mesure_unitheight" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitx" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.x" value="mm"/>
+						<property name="local_mesure_unitwidth" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					</reportElement>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{Customer}.getCustomerName()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Text_N_LA_11" x="0" y="19" width="279" height="71" isRemoveLineWhenBlank="true" uuid="a3b91d55-1aef-4f4c-a700-8a92faf51d29">
+						<property name="local_mesure_unitheight" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+						<property name="local_mesure_unity" value="mm"/>
+						<property name="local_mesure_unitx" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.x" value="mm"/>
+						<property name="local_mesure_unitwidth" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					</reportElement>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{Customer}.getAddressLine1() + "<br>" + $P{Customer}.getAddressLine2() + "<br>" + $P{Customer}.getAddressLine3() + "<br>" + $P{Customer}.getTown() + "<br>" +  $P{Customer}.getCounty() + "<br>" + $P{Customer}.getPostcode() + "<br>" + $P{Customer}.getCountry()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="369" splitType="Stretch">
+			<textField>
+				<reportElement style="Text_N_LA_11" stretchType="RelativeToBandHeight" x="0" y="0" width="550" height="270" uuid="304396c4-a80d-4e08-9b20-82b1c9b76158">
+					<property name="local_mesure_unity" value="mm"/>
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="local_mesure_unitx" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.x" value="mm"/>
+				</reportElement>
+				<textElement markup="html">
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<html>"+
+"<table><tr>"+
+"Dear Sirs,"+
+"<br>"+
+"<br>"+
+"<b>Service Request Over:" + $P{Order}.getAttribute("sosPAON") + "," + $P{Order}.getAttribute("sosstreetName") + "," + $P{Order}.getAttribute("sostown") + "," + $P{Order}.getAttribute("sospostCode") +"</b>"+
+"<br>"+
+"<br>"+
+"We thank you for your instruction received on " + $P{Order}.getOrderReceivedDate()  + "in relation to the above subjects."+
+"<br>"+
+"These instructions have been duly processed and the documentation etc. is now ready to be despatched today."+
+"<br>"+
+"There is no charge for this Service Request."+
+"<br>"+
+"We trust you find all in order."+
+"<br>"+
+"<br>"+
+"<br>"+
+"Yours Faithfully"+
+"</tr>"+
+"</table>"+
+"</html>"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="272" width="233" height="51" uuid="0c27e796-7389-4bdb-bcaa-d576b67d315d">
+					<property name="local_mesure_unitwidth" value="mm"/>
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<imageExpression><![CDATA["Resources/MB_Signature.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="18">
+			<textField>
+				<reportElement x="28" y="0" width="141" height="14" forecolor="#0044FF" uuid="8010343e-178c-4f4c-9382-23ea9f938953">
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+					<property name="local_mesure_unitx" value="mm"/>
+					<property name="local_mesure_unitwidth" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{Email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="28" height="14" uuid="cf522869-5a67-4769-b9a1-8c6ccca5d991">
+					<property name="local_mesure_unitwidth" value="mm"/>
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Emai:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="0" width="28" height="14" uuid="57b2f09e-4a43-4898-aad9-7a3f4cb60846">
+					<property name="local_mesure_unitwidth" value="mm"/>
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+					<property name="local_mesure_unitx" value="mm"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Visit:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="240" y="0" width="141" height="14" forecolor="#0044FF" uuid="25e7c98f-4197-4e1b-8713-7b62446baa86">
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+					<property name="local_mesure_unitx" value="mm"/>
+					<property name="local_mesure_unitwidth" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{URL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="0" width="141" height="14" forecolor="#A6A6A6" uuid="2086dda5-52a5-4d9b-800b-9026c670bcf5">
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+					<property name="local_mesure_unitx" value="mm"/>
+					<property name="local_mesure_unitwidth" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{CopyRight}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

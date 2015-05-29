@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
+<!-- 2015-04-21T12:36:32 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MB_Legal_Report_Registered_Land" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a042eb7-d9f8-4715-9c18-50505f77dc6c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Legal_Report_Registered_land"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="TextField_N" isDefault="true" fontName="Arial" fontSize="9"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="SearchRefNo" class="java.lang.String"/>
+	<field name="AgentAddress" class="java.lang.String"/>
+	<field name="FuedalAbolitionNote" class="java.lang.String"/>
+	<field name="Initials" class="java.lang.String"/>
+	<field name="InstructionRecvd" class="java.lang.String"/>
+	<field name="AgentRef" class="java.lang.String"/>
+	<field name="Subject" class="java.lang.String"/>
+	<field name="SelectOption" class="java.lang.String"/>
+	<field name="TitleNo" class="java.lang.String"/>
+	<field name="DetailDate" class="java.lang.String"/>
+	<field name="TitleSheetDate" class="java.lang.String"/>
+	<field name="RegisteredProprietors" class="java.lang.String"/>
+	<field name="OutstandingCharges" class="java.lang.String"/>
+	<field name="OtherDeeds" class="java.lang.String"/>
+	<field name="AdvanceNotes" class="java.lang.String"/>
+	<field name="RP_DateOfRegistration" class="java.lang.String"/>
+	<field name="OC_DateOfRegistration" class="java.lang.String"/>
+	<field name="OD_DateOfRegistration" class="java.lang.String"/>
+	<field name="RP_DateOfApplication" class="java.lang.String"/>
+	<field name="OC_DateOfApplication" class="java.lang.String"/>
+	<field name="OD_DateOfApplication" class="java.lang.String"/>
+	<field name="AdvanceNotice" class="java.lang.String"/>
+	<field name="AN_DateOfApplication" class="java.lang.String"/>
+	<field name="AN_ValidFrom" class="java.lang.String"/>
+	<field name="AN_By" class="java.lang.String"/>
+	<field name="AN_to" class="java.lang.String"/>
+	<field name="SubjectTitleNo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="302" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="3" width="308" height="57" uuid="e813a957-9423-4478-b788-c96f1559ffba"/>
+				<textElement markup="html">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[<b><font size=10px>Millar & Bryce Limited</font size></b>
+<tr>Bonnington Bond, 2 Anderson Place, Leith, Edinburgh, EH6 5NP
+DX: 550301 Edinburgh 24 – Legal Post No LP125 Edinburgh 2
+Tel: 0131 556 1313 – Fax: 0131 557 5960 
+Registered in Scotland No. 134475</tr>]]></text>
+			</staticText>
+			<image scaleImage="RealHeight">
+				<reportElement x="500" y="3" width="54" height="87" uuid="defd5a02-cdf0-4e1e-a3be-12cf63ccf12d"/>
+				<imageExpression><![CDATA["C:/Users/apathare/JaspersoftWorkspace/Millar_and_Bryce/Resources/MB_Logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="80" y="66" width="400" height="30" uuid="a49d68f9-4b7e-4f35-a4e8-32357fc3e462"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="13" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LEGAL REPORT - REGISTERED LAND]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="TextField_N" x="100" y="210" width="220" height="20" isPrintInFirstWholeBand="true" uuid="1819affd-2644-4d34-8715-090cc55da112">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Subject}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="300" y="120" width="250" height="90" uuid="fda5090e-4020-4118-bbfa-7840564c61dc">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement key="" style="TextField_N" x="0" y="0" width="50" height="20" uuid="17dbf23f-8cca-4a9c-b81c-58538eb2662f">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<text><![CDATA[Date]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="120" y="0" width="100" height="20" uuid="c0fc6608-0f03-4450-80a8-54e7edf593f1">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMM yyyy").format(new Date())]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="" style="TextField_N" x="0" y="20" width="100" height="20" uuid="f9e8835e-4cac-4954-b952-4adbf512862c">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<text><![CDATA[Search Ref No.]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="120" y="20" width="100" height="20" uuid="5f556e59-632b-443f-9b50-8ff273e92676">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{SearchRefNo}+"/"+$F{Initials}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="120" y="40" width="100" height="20" uuid="729becae-0f3a-4945-97cf-93d4b3b7ec21">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{InstructionRecvd}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="" style="TextField_N" x="0" y="40" width="100" height="20" uuid="77a5b28e-f766-43b0-b24c-acf368b7b627">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<text><![CDATA[InstructionRecvd]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="120" y="60" width="100" height="20" uuid="2808feda-ee2f-4477-bc90-35ba23cae200">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{AgentRef}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="" style="TextField_N" x="0" y="60" width="100" height="20" uuid="14534db4-a651-410f-bf9e-d438cfb5b88c">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<text><![CDATA[Your Reference]]></text>
+				</staticText>
+			</frame>
+			<textField>
+				<reportElement x="0" y="250" width="300" height="20" uuid="f83c2322-c7cb-4d5e-8911-c340418a5acb">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{FuedalAbolitionNote}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="TextField_N" x="0" y="270" width="555" height="30" uuid="1b79bba4-ed49-4684-87d5-90e886494f6f">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["We detail particulars from the Title Sheet and Application Record as at <b>"+ new SimpleDateFormat("dd MMM yyyy").format(new Date()-1) +"</b> together with a report from our Personals System detailed below. The Title Sheet as accessed through Registers Direct is currently updated to <b>"+$F{TitleSheetDate}+"</b>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="230" width="220" height="20" uuid="9fa9d292-eeb6-4d58-9230-c416e94a3a0f">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{TitleNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="230" width="100" height="20" uuid="8adb8e0f-69e5-4725-81c0-f19b8a926ed2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{SelectOption}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="TextField_N" x="0" y="210" width="100" height="20" isPrintInFirstWholeBand="true" uuid="6a028f27-ce7c-4f9d-82c3-8db62eb94075">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<text><![CDATA[SUBJECTS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="120" width="180" height="40" uuid="f6888bf1-0276-4701-a93a-22b124bc3dc3">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{AgentAddress}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="415" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="355" height="260" uuid="fedca8ea-0004-4817-8200-f206734faae9">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement x="0" y="0" width="150" height="20" uuid="4ed688e8-747e-4e96-bcce-8a4a7e3baa7b">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement>
+						<font isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[LAND REGISTER]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="45" width="350" height="40" uuid="a9fcf445-7e0a-413a-b5d2-cba586b86f5c">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{RegisteredProprietors}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="100" width="350" height="40" uuid="58651dd6-7b73-4e95-a94f-3c4184cb1066">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{OutstandingCharges}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="155" width="350" height="40" uuid="bb370bb2-18e6-4793-9859-ca35efaefe82">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{OtherDeeds}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="210" width="350" height="40" uuid="6a2a3331-2860-4399-a183-ebac2bd181a1">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textFieldExpression><![CDATA["Advance Notice for " + $F{AdvanceNotice} + " by " + $F{AN_By} + " to " + $F{AN_to} + " of subjects registered under Title Number " + $F{SubjectTitleNo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="30" width="150" height="15" uuid="bcf0d012-e65d-46d8-ae44-430fa42e2373">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement>
+						<font isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Registered Proprietor(s)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="85" width="150" height="15" uuid="3547e408-e448-43d4-89e9-b17879b8947e">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Outstanding Securities]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="140" width="150" height="15" uuid="97b26bae-ad4e-4a6d-87ad-5884913b7e2d">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Other Deeds]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="195" width="150" height="15" uuid="6d3cbd57-421b-4461-8d83-49415f2b6556">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Advance Notices]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="355" y="0" width="100" height="260" uuid="12bea70a-c1e0-4224-ab2f-b8ce4be002d9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="100" height="30" uuid="0ad4cdd9-09ac-4880-954d-044b6d860d86">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[DATE OF REGISTRATION]]></text>
+				</staticText>
+				<textField pattern="dd/MM/YYYY">
+					<reportElement x="0" y="45" width="100" height="20" uuid="c93b37b7-a956-42b6-963c-43c1c28fa245">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{RP_DateOfRegistration}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/YYYY">
+					<reportElement x="0" y="100" width="100" height="20" uuid="fa27e5d6-833d-49f3-9a07-0e4342d66690">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{OC_DateOfRegistration}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/YYYY">
+					<reportElement x="0" y="155" width="100" height="20" uuid="0df2a910-8db1-4bf8-9415-f8d72837b83d">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{OD_DateOfRegistration}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="455" y="0" width="100" height="260" uuid="1026be2b-ce9b-4d6d-8421-5092b5604b59">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="100" height="30" uuid="91df039b-3503-4931-9f61-aff06f19d41d">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[DATE OF APPLICATION]]></text>
+				</staticText>
+				<textField pattern="dd/MM/YYYY">
+					<reportElement x="0" y="45" width="100" height="20" uuid="bd6b9c11-59b9-4a3e-9fa2-4b2151a4b72a">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{RP_DateOfApplication}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/YYYY">
+					<reportElement x="0" y="100" width="100" height="20" uuid="19a7cd36-d020-4bad-a8d4-00ef6064776e">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{OC_DateOfApplication}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/YYYY">
+					<reportElement x="0" y="155" width="100" height="20" uuid="669a6b30-7c29-41dc-b368-f80a2d162f48">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{OD_DateOfApplication}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="210" width="100" height="20" uuid="cb818a55-e109-43b5-a0a7-1cf5a8a0e39a">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{AN_DateOfApplication}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="230" width="100" height="20" uuid="3d2ac9b4-3121-4c18-8c0f-72470bfb53d5">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{AN_ValidFrom}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="0" y="260" width="340" height="30" uuid="1b4f699c-18d1-4d86-a67b-46419625fa21">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{AdvanceNotes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="282" width="548" height="43" uuid="9683b4f5-1be4-43aa-bd56-88f3aba4f4f6">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement markup="html"/>
+				<text><![CDATA[<B><U>SEARCHED FOR INHIBITIONS, ADJUDICATIONS & INSOLVENCIES BY MILLAR & BRYCE’S COMPUTERISED PERSONALS SYSTEM</U></B>
+<tr>&nbsp</tr>
+See attached
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="327" width="548" height="83" uuid="88dcfb71-7b19-45fd-be39-c41e61982d83"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<text><![CDATA[Searches of the Register of Insolvencies will not disclose; 
+Bankruptcy petitions, which are dismissed or which have not yet been awarded, 
+Bankruptcies, which have been recalled or discharged by the Trustee, more than 2 years back from the date of the Register and 
+Protected Trust Deeds [signed prior to 28th Nov 2013] discharged by the Trustee more than 1 year back from the date of the Register, 
+Protected Trust Deeds [signed under the new The Protected Trust Deeds (Scotland) Regulations 2013] discharged by the Trustee more than 2 years back from the date of the Register.
+
+ 
+As of 28th Nov 2013 our searches in the Register of Insolvencies will disclose Trust Deeds that have been advertised for protection from that date.
+
+At the present time searches in the Register of Insolvencies do not include searches against Limited Companies. These can be obtained from our Company Search Department (cosearch@millar-bryce.com)]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="60" width="554" height="14" uuid="8f6e8cbf-4f31-4224-b1ee-709a906dd467"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Email search@millar-bryce.com	Visit www.millar-bryce.com	© 2001 Millar & Bryce]]></text>
+			</staticText>
+			<image>
+				<reportElement x="283" y="0" width="267" height="55" uuid="ab0b0470-b5ea-4d3f-b0fc-f9e46c964bd7"/>
+				<imageExpression><![CDATA["C:/Users/apathare/JaspersoftWorkspace/Millar_and_Bryce/Resources/MB_Signature.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="358" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="30" width="550" height="240" uuid="6956759f-96c1-4002-a356-14561c286eca">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<td><tr>SEARCH</tr>"+
+"<tr>&nbsp</tr>"+
+"<tr>FOR INHIBITIONS, ADJUDICATIONS & INSOLVENCIES</tr>"+
+"<tr>&nbsp</tr>"+
+"<tr>BY MILLAR & BRYCE’S COMPUTERISED PERSONALS SYSTEM</tr>"+
+"<tr>&nbsp</tr>"+
+"<tr>AGAINST</tr>"+
+"<tr>&nbsp</tr>"+
+"<tr>&nbsp</tr>"+
+"<tr><b>NAME OF PARTY</b></tr>"+
+"<tr>&nbsp</tr>"+
+"<tr>FROM </tr>"+ new SimpleDateFormat("dd MMM yyyy").format(new Date()-1) +
+"<tr>&nbsp</tr>"+
+"<tr>TO </tr>" + new SimpleDateFormat("dd MMM yyyy").format(new Date()) + 
+"<tr>&nbsp</tr>"+
+"<tr>NO DEED</tr>"+
+"<tr>&nbsp</tr>"+
+"<tr>&nbsp</tr>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="269" width="460" height="81" uuid="70661ce3-f58c-4fa5-8a08-61881725c2c5">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<tr>SEARCHED FOR INHIBITIONS, ADJUDICATIONS & INSOLVENCIES</tr>"+
+"<tr>&nbsp</tr>"+
+"<tr>BY MILLAR & BRYCE'S COMPUTERISED PERSONALS</tr>"+
+"<tr>&nbsp</tr>"+
+"<tr>SYSTEM AND FOUND AS ABOVE</tr>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="935915bc-e9d7-45ab-bc32-7cbc1049ba9a">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Millar & Bryce Limited]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

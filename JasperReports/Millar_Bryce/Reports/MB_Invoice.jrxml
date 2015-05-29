@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
+<!-- 2015-04-17T16:21:32 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MB_Invoice" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="BlankPage" columnWidth="814" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" isSummaryNewPage="true" uuid="3a7120bc-ae1e-425e-946a-1841afb1774c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DIIG_LIVE"/>
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
+	<parameter name="prmId" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM vCustomerListing WHERE SOURCE_LK_ID =  $P{prmId} ]]>
+	</queryString>
+	<field name="SOURCE_LK_ID" class="java.lang.String"/>
+	<field name="COMPANYGROUP_SOURCE_LK_ID" class="java.lang.String"/>
+	<field name="BRANCH_NM" class="java.lang.String"/>
+	<field name="BRANCH_VAT" class="java.lang.String"/>
+	<field name="BRANCH_INST_DT" class="java.sql.Timestamp"/>
+	<field name="LAST_ORDER_DT" class="java.sql.Date"/>
+	<field name="ENTERED_DT" class="java.sql.Timestamp"/>
+	<field name="BRANCH_STATUS" class="java.lang.String"/>
+	<field name="BRANCH_CLASSIFICATION" class="java.lang.String"/>
+	<field name="BRANCH_STATUS_CHANGED_DT" class="java.sql.Timestamp"/>
+	<field name="CUSTOMER_TYPE" class="java.lang.String"/>
+	<field name="ADDRESS_SUB_PREMISE" class="java.lang.String"/>
+	<field name="ADDRESS_PREMISE_NM" class="java.lang.String"/>
+	<field name="ADDRESS_PREMISE_No" class="java.lang.String"/>
+	<field name="ADDRESS_THOROUGHFARE" class="java.lang.String"/>
+	<field name="ADDRESS_DEPENDENT_LOCALITY" class="java.lang.String"/>
+	<field name="ADDRESS_POST_TOWN" class="java.lang.String"/>
+	<field name="ADDRESS_POST_CODE" class="java.lang.String"/>
+	<field name="ADDRESS_COUNTY" class="java.lang.String"/>
+	<field name="REGION" class="java.lang.String"/>
+	<field name="DX_NO" class="java.lang.String"/>
+	<field name="DX_EXCHANGE" class="java.lang.String"/>
+	<field name="TELEPHONE_NO_1" class="java.lang.String"/>
+	<field name="TELEPHONE_NO_2" class="java.lang.String"/>
+	<field name="FAX" class="java.lang.String"/>
+	<field name="POSTCODE_GRP" class="java.lang.String"/>
+	<field name="TRAINER" class="java.lang.String"/>
+	<field name="HELP_DESK" class="java.lang.String"/>
+	<field name="ACCOUNT_MANAGER" class="java.lang.String"/>
+	<field name="COMPANY_GROUP_NM" class="java.lang.String"/>
+	<field name="COMPANY_GROUP_CLASSIFICATION" class="java.lang.String"/>
+	<field name="COMPANY_GROUP_STATUS" class="java.lang.String"/>
+	<field name="EFFECTIVE_FROM_DT" class="java.sql.Timestamp"/>
+	<field name="EFFECTIVE_TO_DT" class="java.sql.Timestamp"/>
+	<detail>
+		<band height="143" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="10" width="100" height="14" uuid="b926b225-2053-4955-a030-c020fcf16c3d">
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{SOURCE_LK_ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="10" width="100" height="14" uuid="88d46dfb-373d-469c-9985-be06f7060ecd">
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<text><![CDATA[SOURCE_LK_ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="9" y="24" width="107" height="14" uuid="43cc7b5a-d496-45cd-8370-d28e131133a8">
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS_SUB_PREMISE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="38" width="101" height="14" uuid="ea6b01f5-9b2c-4dc8-883a-75499f1fc21c">
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS_PREMISE_NM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="52" width="101" height="14" uuid="993894b0-ed66-46c1-be7d-f84891f88720">
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS_PREMISE_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="66" width="101" height="14" uuid="5da6c7da-8a03-4492-aa04-2e31967a83a0">
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS_THOROUGHFARE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="80" width="101" height="14" uuid="fd8d6d7e-7c27-4220-90a0-e41bea4fe332">
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS_DEPENDENT_LOCALITY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="94" width="101" height="14" uuid="93dec9ab-0412-475e-9668-6f74e73ed28d">
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS_POST_TOWN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="108" width="101" height="14" uuid="2bbfa7ff-70a0-412c-a5f3-4b9860318049">
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS_POST_CODE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="122" width="101" height="14" uuid="0912165b-acff-405c-95c7-a4728e2c7427">
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS_COUNTY}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

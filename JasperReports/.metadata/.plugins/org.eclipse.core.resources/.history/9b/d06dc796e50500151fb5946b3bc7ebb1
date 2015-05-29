@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
+<!-- 2015-05-07T15:16:00 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="T_PT_Charts" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="47b5f24d-689f-4c36-a8c9-c900f18ce7b1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Timesheet_MySQL"/>
+	<property name="ireport.jasperserver.url" value="http://ltwvbis001.eu.local/jasperserver-pro/"/>
+	<property name="ireport.jasperserver.report.resource" value="/organizations/DIIG/IT/Reports/T_PT_Booked_Charts_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/organizations/DIIG/IT/Reports/T_PT_Booked_Charts"/>
+	<parameter name="prmStartDate" class="java.sql.Date">
+		<parameterDescription><![CDATA[Start Date:]]></parameterDescription>
+	</parameter>
+	<parameter name="prmEndDate" class="java.sql.Date">
+		<parameterDescription><![CDATA[End Date:]]></parameterDescription>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[select  Project_Type,  
+concat( substr(min(date_format(week, '%M')),1,3), min(date_format(week, ' %Y')))  as month_name, 
+date_format(week, '%Y%m') as month_no, sum(total_booked_Hours) as total_booked_Hours ,  
+sum(total_booked_core_hours) as total_booked_core_hours,  
+sum(total_booked_extra_hours) as total_booked_extra_hours,
+datekey
+from itr_db.v_timesheet_booked_time
+where  week >=  $P{prmStartDate} 
+and week <= $P{prmEndDate} 
+ group by Project_Type, month_no
+order by month_no]]>
+	</queryString>
+	<field name="total_booked_Hours" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_booked_core_hours" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_booked_extra_hours" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="month_name" class="java.lang.String"/>
+	<field name="month_no" class="java.lang.String"/>
+	<field name="Project_Type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="0" width="798" height="30" uuid="51df6862-331d-4710-a4ec-b6635b41736b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total booked hours by Project Type between "+
+new SimpleDateFormat("dd MMM yyyy").format($P{prmStartDate}) + " and " + new SimpleDateFormat("dd MMM yyyy").format($P{prmEndDate})]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<summary>
+		<band height="450" splitType="Stretch">
+			<componentElement>
+				<reportElement x="3" y="0" width="798" height="450" uuid="f97c641a-fe5e-43ba-8af1-e00c4b896c12"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Line">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="chart.zoomType">
+							<hc:propertyExpression><![CDATA["xy"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="colors">
+							<hc:propertyExpression><![CDATA[java.util.Arrays.asList("#2f7ed8","#203CBD","#8bbc21","#910000","#FF0080","#492970","#f28f43","#8080C0","#c42525","#a6c96a")]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.enabled">
+							<hc:propertyExpression><![CDATA[false]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.href">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.align">
+							<hc:propertyExpression><![CDATA["right"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.borderRadius">
+							<hc:propertyExpression><![CDATA[new Integer(0)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.borderWidth">
+							<hc:propertyExpression><![CDATA[new Integer(0)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.layout">
+							<hc:propertyExpression><![CDATA["vertical"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.verticalAlign">
+							<hc:propertyExpression><![CDATA["middle"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="subtitle.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="title.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="xAxis.labels.rotation">
+							<hc:propertyExpression><![CDATA[new Integer(45)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.min" value="0"/>
+						<hc:chartProperty name="yAxis.title.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset/>
+						<dataAxis axis="Rows">
+							<axisLevel name="WEEK">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket order="None" class="java.lang.String">
+									<bucketExpression><![CDATA[$F{month_name}.toString()]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns">
+							<axisLevel name="BU_NAME">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.String">
+									<bucketExpression><![CDATA[$F{Project_Type}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Booked_Hours" class="java.lang.Float" calculation="Sum">
+							<labelExpression><![CDATA[""]]></labelExpression>
+							<valueExpression><![CDATA[$F{total_booked_Hours}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+					<hc:series name="Booked_Hours"/>
+				</hc:chart>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>
