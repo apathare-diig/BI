@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
+<!-- 2015-06-11T18:49:39 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mb_ordersample" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="072fd7df-c26d-4c13-bcec-0ad1fabe76fb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mb_order"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<queryString language="xPath">
+		<![CDATA[/order/orderSection/products/product/addOn]]>
+	</queryString>
+	<field name="addOn" class="java.lang.String">
+		<fieldDescription><![CDATA[product/addOn]]></fieldDescription>
+	</field>
+	<field name="surname" class="java.lang.String">
+		<fieldDescription><![CDATA[surname]]></fieldDescription>
+	</field>
+	<field name="forename" class="java.lang.String">
+		<fieldDescription><![CDATA[forename]]></fieldDescription>
+	</field>
+	<field name="salutation" class="java.lang.String">
+		<fieldDescription><![CDATA[salutation]]></fieldDescription>
+	</field>
+	<field name="postCode" class="java.lang.String">
+		<fieldDescription><![CDATA[postCode]]></fieldDescription>
+	</field>
+	<field name="fullAddress" class="java.lang.String">
+		<fieldDescription><![CDATA[fullAddress]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="554" height="20" uuid="d226e4c6-0d84-49ce-aca7-0043e046261f"/>
+				<box>
+					<topPen lineWidth="0.2" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.2" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.2" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.2" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{salutation} + " " + $F{forename} + " " + $F{surname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

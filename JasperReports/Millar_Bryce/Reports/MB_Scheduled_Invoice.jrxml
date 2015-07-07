@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
-<!-- 2015-05-28T14:16:18 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MB_Scheduled_Invoice" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4259c82e-54f0-42a4-af4d-33a43a353fbb">
+<!-- 2015-06-02T09:59:12 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MB_Scheduled_Invoice" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="Resources/MB_Invoice" uuid="4259c82e-54f0-42a4-af4d-33a43a353fbb">
 	<property name="com.jaspersoft.studio.unit." value="mm"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
@@ -12,6 +12,9 @@
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MB_WORKFLOW_QA"/>
+	<property name="ireport.jasperserver.url" value="http://192.168.228.76:8080/jasperserver-pro/"/>
+	<property name="ireport.jasperserver.report.resource" value="/organizations/DIIG/Millar_amp_Bryce_Reports/Reports/MB_Scheduled_Invoice_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/organizations/DIIG/Millar_amp_Bryce_Reports/Reports/MB_Scheduled_Invoice"/>
 	<parameter name="prmCustomerId" class="java.lang.String"/>
 	<parameter name="prmEndDate" class="java.util.Date"/>
 	<parameter name="prmStartDate" class="java.util.Date"/>

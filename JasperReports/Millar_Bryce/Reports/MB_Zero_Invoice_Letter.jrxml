@@ -1,34 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
-<!-- 2015-05-22T16:15:26 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MB_Zero_Invoice_Letter" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" resourceBundle="Resources/MB_Invoice" uuid="f333fce7-6192-4223-b15f-1c15480c1456">
+<!-- 2015-07-07T11:19:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MB_Zero_Invoice_Letter" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" resourceBundle="C:/report_templates/resources/MB_Invoice" uuid="f333fce7-6192-4223-b15f-1c15480c1456">
 	<property name="com.jaspersoft.studio.unit." value="mm"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<template><![CDATA["Resources/MB_Styles.jrtx"]]></template>
-	<parameter name="OrderItem" class="com.diig.attis.order.model.OrderItem"/>
-	<parameter name="Customer" class="com.diig.attis.customer.model.Customer"/>
-	<parameter name="Order" class="com.diig.attis.order.model.Order"/>
-	<queryString>
-		<![CDATA[]]>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MB_order"/>
+	<template><![CDATA["C:/report_templates/resources/MB_Styles.jrtx"]]></template>
+	<queryString language="xPath">
+		<![CDATA[/order/products/product/data]]>
 	</queryString>
+	<field name="contactID" class="java.lang.String">
+		<fieldDescription><![CDATA[contactID]]></fieldDescription>
+	</field>
+	<field name="clientName" class="java.lang.String">
+		<fieldDescription><![CDATA[clientName]]></fieldDescription>
+	</field>
+	<field name="sostown" class="java.lang.String">
+		<fieldDescription><![CDATA[sostown]]></fieldDescription>
+	</field>
+	<field name="sospostCode" class="java.lang.String">
+		<fieldDescription><![CDATA[sospostCode]]></fieldDescription>
+	</field>
+	<field name="PropertySearchType" class="java.lang.String">
+		<fieldDescription><![CDATA[PropertySearchType]]></fieldDescription>
+	</field>
+	<field name="sosPAON" class="java.lang.String">
+		<fieldDescription><![CDATA[sosPAON]]></fieldDescription>
+	</field>
+	<field name="fileReference" class="java.lang.String">
+		<fieldDescription><![CDATA[fileReference]]></fieldDescription>
+	</field>
+	<field name="sosstreetName" class="java.lang.String">
+		<fieldDescription><![CDATA[sosstreetName]]></fieldDescription>
+	</field>
+	<field name="restartProperty" class="java.lang.String">
+		<fieldDescription><![CDATA[restartProperty]]></fieldDescription>
+	</field>
+	<field name="restartPersonal" class="java.lang.String">
+		<fieldDescription><![CDATA[restartPersonal]]></fieldDescription>
+	</field>
+	<field name="DocumentName" class="java.lang.String">
+		<fieldDescription><![CDATA[DocumentName]]></fieldDescription>
+	</field>
+	<field name="SearcherId" class="java.lang.String">
+		<fieldDescription><![CDATA[SearcherId]]></fieldDescription>
+	</field>
+	<field name="emailReport" class="java.lang.String">
+		<fieldDescription><![CDATA[emailReport]]></fieldDescription>
+	</field>
+	<field name="dateRequired" class="java.lang.String">
+		<fieldDescription><![CDATA[dateRequired]]></fieldDescription>
+	</field>
+	<field name="instruction" class="java.lang.String">
+		<fieldDescription><![CDATA[instruction]]></fieldDescription>
+	</field>
+	<field name="processIds" class="java.lang.String">
+		<fieldDescription><![CDATA[processIds]]></fieldDescription>
+	</field>
+	<field name="timeSlotStart" class="java.lang.String">
+		<fieldDescription><![CDATA[timeSlotStart]]></fieldDescription>
+	</field>
+	<field name="timeSlotEnd" class="java.lang.String">
+		<fieldDescription><![CDATA[timeSlotEnd]]></fieldDescription>
+	</field>
+	<field name="supplierReference" class="java.lang.String">
+		<fieldDescription><![CDATA[supplierReference]]></fieldDescription>
+	</field>
+	<field name="regDirectTS" class="java.lang.String">
+		<fieldDescription><![CDATA[regDirectTS]]></fieldDescription>
+	</field>
+	<field name="serviceRequestId" class="java.lang.String">
+		<fieldDescription><![CDATA[serviceRequestId]]></fieldDescription>
+	</field>
+	<field name="checkBSection" class="java.lang.String">
+		<fieldDescription><![CDATA[checkBSection]]></fieldDescription>
+	</field>
+	<field name="deliveryMethod" class="java.lang.String">
+		<fieldDescription><![CDATA[deliveryMethod]]></fieldDescription>
+	</field>
+	<field name="particularsTS" class="java.lang.String">
+		<fieldDescription><![CDATA[particularsTS]]></fieldDescription>
+	</field>
+	<field name="advNoticeFor1" class="java.lang.String">
+		<fieldDescription><![CDATA[advNoticeFor1]]></fieldDescription>
+	</field>
+	<field name="advNoticeFor2" class="java.lang.String">
+		<fieldDescription><![CDATA[advNoticeFor2]]></fieldDescription>
+	</field>
+	<field name="otherDeeds2" class="java.lang.String">
+		<fieldDescription><![CDATA[otherDeeds2]]></fieldDescription>
+	</field>
+	<field name="advNoticeFor3" class="java.lang.String">
+		<fieldDescription><![CDATA[advNoticeFor3]]></fieldDescription>
+	</field>
+	<field name="otherDeeds1" class="java.lang.String">
+		<fieldDescription><![CDATA[otherDeeds1]]></fieldDescription>
+	</field>
+	<field name="otherDeeds5" class="java.lang.String">
+		<fieldDescription><![CDATA[otherDeeds5]]></fieldDescription>
+	</field>
+	<field name="entriesFound" class="java.lang.String">
+		<fieldDescription><![CDATA[entriesFound]]></fieldDescription>
+	</field>
+	<field name="entriesSpecify" class="java.lang.String">
+		<fieldDescription><![CDATA[entriesSpecify]]></fieldDescription>
+	</field>
+	<field name="regProprietor1" class="java.lang.String">
+		<fieldDescription><![CDATA[regProprietor1]]></fieldDescription>
+	</field>
+	<field name="otherDeeds4" class="java.lang.String">
+		<fieldDescription><![CDATA[otherDeeds4]]></fieldDescription>
+	</field>
+	<field name="otherDeeds3" class="java.lang.String">
+		<fieldDescription><![CDATA[otherDeeds3]]></fieldDescription>
+	</field>
+	<field name="titleNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[titleNumber]]></fieldDescription>
+	</field>
+	<field name="value" class="java.lang.String">
+		<fieldDescription><![CDATA[processIds/value]]></fieldDescription>
+	</field>
+	<field name="propSearcherId" class="java.lang.String">
+		<fieldDescription><![CDATA[propSearcherId]]></fieldDescription>
+	</field>
+	<field name="messageId" class="java.lang.String">
+		<fieldDescription><![CDATA[messageId]]></fieldDescription>
+	</field>
+	<field name="outCharges1" class="java.lang.String">
+		<fieldDescription><![CDATA[outCharges1]]></fieldDescription>
+	</field>
+	<field name="outCharges2" class="java.lang.String">
+		<fieldDescription><![CDATA[outCharges2]]></fieldDescription>
+	</field>
+	<field name="outCharges3" class="java.lang.String">
+		<fieldDescription><![CDATA[outCharges3]]></fieldDescription>
+	</field>
+	<field name="outCharges4" class="java.lang.String">
+		<fieldDescription><![CDATA[outCharges4]]></fieldDescription>
+	</field>
+	<field name="outCharges5" class="java.lang.String">
+		<fieldDescription><![CDATA[outCharges5]]></fieldDescription>
+	</field>
+	<field name="beingTheWholeSubject" class="java.lang.String">
+		<fieldDescription><![CDATA[beingTheWholeSubject]]></fieldDescription>
+	</field>
+	<field name="titleHeader" class="java.lang.String">
+		<fieldDescription><![CDATA[titleHeader]]></fieldDescription>
+	</field>
+	<field name="outCharges6" class="java.lang.String">
+		<fieldDescription><![CDATA[outCharges6]]></fieldDescription>
+	</field>
+	<field name="productTypeId" class="java.lang.String">
+		<fieldDescription><![CDATA[ancestor::product/@productTypeId]]></fieldDescription>
+	</field>
+	<field name="orderRef" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/orderData/orderRef]]></fieldDescription>
+	</field>
+	<field name="subPremise" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/address/subPremise]]></fieldDescription>
+	</field>
+	<field name="unit" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/address/unit]]></fieldDescription>
+	</field>
+	<field name="building" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/address/building]]></fieldDescription>
+	</field>
+	<field name="street" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/address/street]]></fieldDescription>
+	</field>
+	<field name="community" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/address/community]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/address/city]]></fieldDescription>
+	</field>
+	<field name="county" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/address/county]]></fieldDescription>
+	</field>
+	<field name="country" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/address/country]]></fieldDescription>
+	</field>
+	<field name="postalCode" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/address/postalCode]]></fieldDescription>
+	</field>
+	<field name="DXNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/data/DXNumber]]></fieldDescription>
+	</field>
+	<field name="DXExchange" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/data/DXExchange]]></fieldDescription>
+	</field>
+	<field name="LPLocation" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/data/LPLocation]]></fieldDescription>
+	</field>
+	<field name="LPNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/data/LPNumber]]></fieldDescription>
+	</field>
+	<field name="orderReceivedDate" class="java.lang.String">
+		<fieldDescription><![CDATA[orderReceivedDate]]></fieldDescription>
+	</field>
+	<field name="sosSAON" class="java.lang.String">
+		<fieldDescription><![CDATA[sosSAON]]></fieldDescription>
+	</field>
+	<field name="soslocality" class="java.lang.String">
+		<fieldDescription><![CDATA[soslocality]]></fieldDescription>
+	</field>
+	<field name="preferredDeliveryMethod" class="java.lang.String">
+		<fieldDescription><![CDATA[/order/products/product/data/contact/office/data/preferredDeliveryMethod]]></fieldDescription>
+	</field>
+	<variable name="vPropAddress" class="java.lang.String">
+		<variableExpression><![CDATA[((!$F{sosSAON}.equals(null) ? $F{sosSAON} + ", " : "") + 
+(!$F{sosPAON}.equals(null) ? $F{sosPAON} + ", " : "") + 
+(!$F{sosstreetName}.equals(null) ? $F{sosstreetName} + ", " : "") + 
+(!$F{soslocality}.equals(null) ? $F{soslocality} + ", " : "") + 
+(!$F{sostown}.equals(null) ? $F{sostown} + ", " : "") + 
+(!$F{sospostCode}.equals(null) ? $F{sospostCode}  : ""))]]></variableExpression>
+	</variable>
 	<title>
-		<band height="292" splitType="Stretch">
+		<band height="262" splitType="Stretch">
 			<textField>
 				<reportElement key="" style="Text_B_LA_11" x="212" y="0" width="170" height="30" uuid="f0d99e07-12fc-457d-89bb-7a2ff8a631ea">
 					<property name="local_mesure_unitwidth" value="mm"/>
 					<property name="local_mesure_unitx" value="mm"/>
 				</reportElement>
 				<textElement markup="html"/>
-				<textFieldExpression><![CDATA[$P{OrderItem}.getProductId()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{productTypeId}]]></textFieldExpression>
 			</textField>
 			<image>
 				<reportElement x="484" y="0" width="85" height="116" uuid="42466ff2-6e99-435a-9e47-c46fa6dd2d3d"/>
-				<imageExpression><![CDATA["C:/Users/apathare/JaspersoftWorkspace/Millar_and_Bryce/Resources/Millar_Bryce_Logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["C:/report_templates/resources/Millar_Bryce_Logo.jpg"]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement x="355" y="170" width="200" height="110" uuid="c55e6667-6b7e-498c-9a59-4b7de8d7c6c3"/>
+				<reportElement x="320" y="170" width="235" height="92" uuid="c55e6667-6b7e-498c-9a59-4b7de8d7c6c3"/>
 				<textField>
-					<reportElement style="Text_N_LA_11" x="0" y="0" width="99" height="19" isRemoveLineWhenBlank="true" uuid="0dd5d81f-50fb-40c1-8be1-14c070d58d00">
+					<reportElement style="Text_N_LA_11" x="0" y="0" width="113" height="19" isRemoveLineWhenBlank="true" uuid="0dd5d81f-50fb-40c1-8be1-14c070d58d00">
 						<property name="local_mesure_unitheight" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 						<property name="local_mesure_unity" value="pixel"/>
@@ -36,7 +239,6 @@
 						<property name="local_mesure_unitx" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.x" value="mm"/>
 						<property name="local_mesure_unitwidth" value="mm"/>
-						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 					</reportElement>
 					<textElement>
 						<font size="11"/>
@@ -44,14 +246,13 @@
 					<textFieldExpression><![CDATA[$R{Date}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Text_N_LA_11" x="0" y="38" width="99" height="19" isRemoveLineWhenBlank="true" uuid="a89f90c6-ed1b-4882-a504-20547865323a">
+					<reportElement style="Text_N_LA_11" x="0" y="38" width="113" height="19" isRemoveLineWhenBlank="true" uuid="a89f90c6-ed1b-4882-a504-20547865323a">
 						<property name="local_mesure_unitheight" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 						<property name="local_mesure_unity" value="mm"/>
 						<property name="local_mesure_unitx" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.x" value="mm"/>
 						<property name="local_mesure_unitwidth" value="mm"/>
-						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 					</reportElement>
 					<textElement>
 						<font size="11"/>
@@ -59,14 +260,13 @@
 					<textFieldExpression><![CDATA[$R{YourRef}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Text_N_LA_11" x="0" y="19" width="99" height="19" isRemoveLineWhenBlank="true" uuid="df4cdb44-80bf-4e0c-b4f4-c1d5468e6685">
+					<reportElement style="Text_N_LA_11" x="0" y="19" width="113" height="19" isRemoveLineWhenBlank="true" uuid="df4cdb44-80bf-4e0c-b4f4-c1d5468e6685">
 						<property name="local_mesure_unitheight" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 						<property name="local_mesure_unity" value="mm"/>
 						<property name="local_mesure_unitx" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.x" value="mm"/>
 						<property name="local_mesure_unitwidth" value="mm"/>
-						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 					</reportElement>
 					<textElement>
 						<font size="11"/>
@@ -74,13 +274,14 @@
 					<textFieldExpression><![CDATA[$R{SearchRefNo}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Text_N_LA_11" x="99" y="0" width="99" height="19" isRemoveLineWhenBlank="true" uuid="343ecd37-a7e6-4d8d-a3f7-52e5b4bf5a88">
+					<reportElement style="Text_N_LA_11" x="113" y="0" width="99" height="19" isRemoveLineWhenBlank="true" uuid="343ecd37-a7e6-4d8d-a3f7-52e5b4bf5a88">
 						<property name="local_mesure_unitheight" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 						<property name="local_mesure_unity" value="mm"/>
 						<property name="local_mesure_unitx" value="mm"/>
 						<property name="local_mesure_unitwidth" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.x" value="mm"/>
 					</reportElement>
 					<textElement>
 						<font size="11"/>
@@ -88,7 +289,7 @@
 					<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMM yyyy").format(new java.util.Date())]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Text_N_LA_11" x="100" y="19" width="99" height="19" isRemoveLineWhenBlank="true" uuid="b9699f1c-4000-4159-ab58-c3d368254a75">
+					<reportElement style="Text_N_LA_11" x="113" y="19" width="99" height="19" isRemoveLineWhenBlank="true" uuid="b9699f1c-4000-4159-ab58-c3d368254a75">
 						<property name="local_mesure_unitheight" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 						<property name="local_mesure_unity" value="mm"/>
@@ -96,14 +297,15 @@
 						<property name="local_mesure_unitwidth" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.y" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.x" value="mm"/>
 					</reportElement>
 					<textElement>
 						<font size="11"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$P{Order}.getOrderReference()+"/"+$P{Order}.getAttribute("SearcherId")]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{orderRef}+"/"+$F{SearcherId}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Text_N_LA_11" x="100" y="38" width="99" height="19" isRemoveLineWhenBlank="true" uuid="388ede42-0ad4-4427-8cc5-3b522595d0c9">
+					<reportElement style="Text_N_LA_11" x="113" y="38" width="99" height="19" isRemoveLineWhenBlank="true" uuid="388ede42-0ad4-4427-8cc5-3b522595d0c9">
 						<property name="local_mesure_unitheight" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 						<property name="local_mesure_unity" value="mm"/>
@@ -111,15 +313,16 @@
 						<property name="local_mesure_unitwidth" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.y" value="mm"/>
+						<property name="com.jaspersoft.studio.unit.x" value="mm"/>
 					</reportElement>
 					<textElement>
 						<font size="11"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$P{Order}.getAttribute("fileReference")]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{fileReference}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement x="1" y="172" width="279" height="108" uuid="d6d921b1-4524-4398-a7d7-8903e74fdcbc"/>
+				<reportElement x="1" y="172" width="279" height="90" uuid="d6d921b1-4524-4398-a7d7-8903e74fdcbc"/>
 				<textField>
 					<reportElement style="Text_N_LA_11" x="0" y="0" width="99" height="19" isRemoveLineWhenBlank="true" uuid="720f3df0-2362-4b04-9387-520ceace8e1e">
 						<property name="local_mesure_unitheight" value="mm"/>
@@ -134,10 +337,10 @@
 					<textElement>
 						<font size="11"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$P{Customer}.getCustomerName()]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{clientName}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Text_N_LA_11" x="0" y="19" width="279" height="71" isRemoveLineWhenBlank="true" uuid="a3b91d55-1aef-4f4c-a700-8a92faf51d29">
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement style="Text_N_LA_11" x="0" y="19" width="279" height="71" uuid="a3b91d55-1aef-4f4c-a700-8a92faf51d29">
 						<property name="local_mesure_unitheight" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 						<property name="local_mesure_unity" value="mm"/>
@@ -146,12 +349,45 @@
 						<property name="local_mesure_unitwidth" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 					</reportElement>
-					<textElement>
+					<textElement markup="html">
 						<font size="11"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$P{Customer}.getAddressLine1() + "<br>" + $P{Customer}.getAddressLine2() + "<br>" + $P{Customer}.getAddressLine3() + "<br>" + $P{Customer}.getTown() + "<br>" +  $P{Customer}.getCounty() + "<br>" + $P{Customer}.getPostcode() + "<br>" + $P{Customer}.getCountry()]]></textFieldExpression>
+					<textFieldExpression><![CDATA[(($F{preferredDeliveryMethod}.equals("DX")) ? "DX: "  + $F{DXNumber}+ " " +$F{DXExchange}  : (($F{preferredDeliveryMethod}.equals("LP")) ? "LP: " + $F{LPNumber} + " " + $F{LPLocation}: 
+(($F{subPremise}.equals("null") || $F{subPremise}.equals(null) )?"": $F{subPremise} + ",") + (($F{building}.equals("null") || $F{building}.equals(null) )?"": $F{building} + "<br>" ) +
+(($F{unit}.equals("null") || $F{unit}.equals(null) )?"": $F{unit} + ",") + (($F{street}.equals("null") || $F{street}.equals(null))?"": $F{street}  + "<br>" ) + 
+(($F{community}.equals("null") || $F{community}.equals(null))?"": $F{community}  + "<br>" ) + 
+(($F{city}.equals("null") || $F{city}.equals(null))?"": $F{city}  + "<br>" ) + 
+(($F{county}.equals("null") || $F{county}.equals(null))?"": $F{county}  + "<br>" ) + 
+$F{postalCode} ) )]]></textFieldExpression>
 				</textField>
 			</frame>
+			<textField>
+				<reportElement x="0" y="0" width="170" height="141" forecolor="#0044FF" uuid="01e632e2-32c0-4c96-af26-a29b58741503">
+					<property name="local_mesure_unitx" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.x" value="mm"/>
+					<property name="local_mesure_unity" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.y" value="mm"/>
+					<property name="local_mesure_unitwidth" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					<property name="local_mesure_unitheight" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<textElement markup="html">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<ul>"+
+"<li>Property Searches</li>"+
+"<li>Property Definition Reports</li>"+
+"<li>Personal Searches</li>"+
+"<li>Company Searches</li>"+
+"<li>Company Formations</li>"+
+"<li>Copies & Extracts</li>"+
+"<li>Genealogical Searches</li>"+
+"<li>Defective Title Insurance</li>"+
+"<li>Property Enquiry Certificates</li>"+
+"<li>Specialised Investigation Services</li>"+
+"</ul>"]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<detail>
@@ -164,22 +400,18 @@
 					<property name="com.jaspersoft.studio.unit.x" value="mm"/>
 				</reportElement>
 				<textElement markup="html">
+					<font size="11"/>
 					<paragraph lineSpacing="Double"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<html>"+
-"<table><tr>"+
-"Dear Sirs,"+
+				<textFieldExpression><![CDATA["<br>"+
+"<br>"+
+"<b>Service Request Over: " +  $V{vPropAddress} +"</b>"+
 "<br>"+
 "<br>"+
-"<b>Service Request Over:" + $P{Order}.getAttribute("sosPAON") + "," + $P{Order}.getAttribute("sosstreetName") + "," + $P{Order}.getAttribute("sostown") + "," + $P{Order}.getAttribute("sospostCode") +"</b>"+
-"<br>"+
-"<br>"+
-"We thank you for your instruction received on " + $P{Order}.getOrderReceivedDate()  + "in relation to the above subjects."+
-"<br>"+
-"These instructions have been duly processed and the documentation etc. is now ready to be despatched today."+
-"<br>"+
-"There is no charge for this Service Request."+
-"<br>"+
+"We thank you for your instruction received on " + new java.text.SimpleDateFormat("dd MMM yyyy").format(new java.text.SimpleDateFormat("dd-MM-yyyy").parse($F{instruction}))  + " in relation to the above subjects."+
+"<br><br>"+
+"Please find enclosed the Service Request Response; we can confirm there will be no charge for this service on this occasion."+ 
+"<br><br>"+
 "We trust you find all in order."+
 "<br>"+
 "<br>"+
@@ -195,7 +427,7 @@
 					<property name="local_mesure_unitheight" value="mm"/>
 					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 				</reportElement>
-				<imageExpression><![CDATA["Resources/MB_Signature.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["C:/report_templates/resources/MB_Signature.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</detail>

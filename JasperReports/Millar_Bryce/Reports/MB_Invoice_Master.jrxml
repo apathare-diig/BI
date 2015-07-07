@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
-<!-- 2015-05-28T14:12:20 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MB_Invoice_Master" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="814" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" resourceBundle="Resources/MB_Invoice" uuid="2606c928-0947-46a2-a452-95c3b59e7dc4">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MB_WORKFLOW_QA"/>
+<!-- 2015-06-16T11:26:55 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MB_Invoice_Master" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="814" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" resourceBundle="MB_Invoice" whenResourceMissingType="Empty" uuid="2606c928-0947-46a2-a452-95c3b59e7dc4">
 	<property name="com.jaspersoft.studio.unit." value="mm"/>
-	<template><![CDATA["Resources/MB_Styles.jrtx"]]></template>
+	<property name="ireport.jasperserver.url" value="http://192.168.228.76:8080/jasperserver-pro/"/>
+	<property name="ireport.jasperserver.report.resource" value="/organizations/DIIG/Millar_amp_Bryce_Reports/Reports/MB_Invoice_Master_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/organizations/DIIG/Millar_amp_Bryce_Reports/Reports/MB_Invoice_Master"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MB_Workflow_DEV"/>
+	<template><![CDATA["MB_Styles.jrtx"]]></template>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -153,13 +156,12 @@ WHERE  cust.customerid  = $P{prmCustomerId}  GROUP BY ord.id]]>
 		<defaultValueExpression><![CDATA[new java.util.Date()]]></defaultValueExpression>
 	</parameter>
 	<parameter name="prmStartDate" class="java.util.Date">
-		<defaultValueExpression><![CDATA[new java.util.Date()-7
-]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new java.util.Date()-7]]></defaultValueExpression>
 	</parameter>
 	<queryString language="SQL">
 		<![CDATA[select
 MAX('INV') as InvType
-,MAX(cust.customerid) as CustomerId
+,MAX(cust.id) as CustomerId
 ,MAX(cust.customername) as CustomerName
 ,MAX(addressLine1) as AddressLine1
 ,MAX(addressLine2) as AddressLine2
@@ -189,14 +191,14 @@ MAX('INV') as InvType
 ,MIN(taxamount_amt) AS TaxAmount
 ,MIN(saleprice_amt) AS SalePriceAmount
 ,MIN(priceitem.productid) AS productid
-from mb_workflow_platform.order ord
+from mb_workflow_platform.`order` ord
 JOIN mb_workflow_platform.orderitem orditem on orditem.orderid = ord.id 
 JOIN mb_workflow_platform.attribute attr on attr.orderItemId = orditem.id
 JOIN mb_workflow_platform.reportingattributes repattr on repattr.attributeId = attr.id
 JOIN mb_workflow_platform.price on price.priceid = ord.priceid
 JOIN mb_workflow_platform.priceitem on priceitem.priceid = price.id 
-JOIN mb_workflow_platform.customer cust on cust.customerid = ord.customerid
-WHERE  cust.customerid  = $P{prmCustomerId}  
+JOIN mb_workflow_platform.customer cust on cust.id = ord.customerid
+WHERE  cust.id  = $P{prmCustomerId}  
 AND OrderReceivedDate BETWEEN   $P{prmStartDate}  AND  $P{prmEndDate} GROUP BY ord.id
 -- LIMIT 1]]>
 	</queryString>
@@ -285,7 +287,7 @@ AND OrderReceivedDate BETWEEN   $P{prmStartDate}  AND  $P{prmEndDate} GROUP BY o
 				</textField>
 				<image>
 					<reportElement x="0" y="1" width="85" height="116" uuid="066dbb3b-87c3-4432-aa21-2dc0c3a38f4b"/>
-					<imageExpression><![CDATA["C:/Users/apathare/JaspersoftWorkspace/Millar_and_Bryce/Resources/Millar_Bryce_Logo.jpg"]]></imageExpression>
+					<imageExpression><![CDATA["Millar_Bryce_Logo.jpg"]]></imageExpression>
 				</image>
 			</frame>
 			<frame>
@@ -513,7 +515,7 @@ AND OrderReceivedDate BETWEEN   $P{prmStartDate}  AND  $P{prmEndDate} GROUP BY o
 				</textField>
 				<image>
 					<reportElement x="0" y="1" width="85" height="116" uuid="f61f0a68-39a3-4505-8cb0-07555ba80387"/>
-					<imageExpression><![CDATA["C:/Users/apathare/JaspersoftWorkspace/Millar_and_Bryce/Resources/Millar_Bryce_Logo.jpg"]]></imageExpression>
+					<imageExpression><![CDATA["Millar_Bryce_Logo.jpg"]]></imageExpression>
 				</image>
 			</frame>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
